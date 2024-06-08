@@ -1,0 +1,8 @@
+library(dplyr)
+data1 <- read.csv("/home/sm1073/Documents/independent_project/Tukianen_list.csv")
+escape_data <- data1 %>% filter(Studies.combined == "escape")
+inactive_data <- data1 %>% filter(Studies.combined == "inactive")
+variable_data <- data1 %>% filter(Studies.combined == "variable")
+write.csv(escape_data, "escape_data.csv", row.names = FALSE)
+write.csv(inactive_data, "inactive_data.csv", row.names = FALSE)
+write.csv(variable_data, "variable_data.csv", row.names = FALSE)
